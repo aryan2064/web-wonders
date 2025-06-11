@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3eef8;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+}
+
+.card {
+  background: #ffffff;
+  max-width: 500px;
+  width: 90%;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 12px rgba(100, 50, 150, 0.08);
+  align-self: flex-start;
+}
+
+h1 {
+  color: #1e293b;
+  font-size: 28px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+#taskInput {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #d8cde8;
+  border-radius: 8px;
+  font-size: 15px;
+  background: #faf5ff;
+  color: #1e293b;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#taskInput:focus {
+  border-color: #7c3aed;
+}
+
+#addBtn {
+  padding: 10px 20px;
+  background: #7c3aed;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+#addBtn:hover {
+  background: #6d28d9;
+}
+
+#taskList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border: 1px solid #d8cde8;
+  border-radius: 8px;
+  background: #ffffff;
+  transition: opacity 0.2s;
+}
+
+.task-item.completed {
+  opacity: 0.55;
+}
+
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: #6b21a8;
+}
+
+.task-text {
+  flex: 1;
+  font-size: 15px;
+  color: #1e293b;
+  cursor: pointer;
+  word-break: break-word;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+.btn-complete,
+.btn-delete {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-complete {
+  background: #7c3aed;
+  color: #ffffff;
+}
+
+.btn-complete:hover {
+  opacity: 0.85;
+}
+
+.btn-delete {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.btn-delete:hover {
+  opacity: 0.85;
+}
