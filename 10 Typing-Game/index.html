@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Typing Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Typing Game</h1>
+
+  <div id="infoBar">
+    <p>Score: <span id="score">0</span></p>
+    <p>Lives: <span id="lives">5</span></p>
+  </div>
+
+  <div id="gameArea"></div>
+
+  <div id="inputArea">
+    <input id="wordInput" type="text" placeholder="Type any word on screen and press Enter" autocomplete="off">
+    <button id="shootBtn">Shoot</button>
+  </div>
+
+  <p id="helpText">Type any visible word to remove it.</p>
+  <p id="message"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
