@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Sudoku</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="difficulty-screen">
+    <h1>Sudoku</h1>
+    <p>Select Difficulty</p>
+    <div class="difficulty-options">
+      <button class="diff-btn" data-difficulty="easy">Easy</button>
+      <button class="diff-btn" data-difficulty="medium">Medium</button>
+      <button class="diff-btn" data-difficulty="hard">Hard</button>
+    </div>
+  </div>
+
+  <div id="game-screen" class="hidden">
+    <h1>Sudoku</h1>
+    <p id="difficulty-label"></p>
+
+    <div id="sudoku-grid" class="grid"></div>
+
+    <div class="controls">
+      <button id="generate-btn">Generate Sudoku</button>
+      <button id="solve-btn">Solve Sudoku</button>
+      <button id="change-diff-btn">Change Difficulty</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
