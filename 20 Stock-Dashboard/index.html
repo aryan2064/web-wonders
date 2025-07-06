@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Stock Dashboard</h1>
+        <p class="header-sub">Track real-time stock prices</p>
+    </header>
+
+    <main class="main">
+        <section id="apiKeySection" class="api-key-section">
+            <div class="api-key-card">
+                <h2>API Key Required</h2>
+                <p>Enter your <a href="https://www.alphavantage.co/support/#api-key" target="_blank">Alpha Vantage</a> API key to use this dashboard. Free keys are available.</p>
+                <div class="api-key-input-row">
+                    <input type="text" id="apiKeyInput" placeholder="Paste your API key here">
+                    <button id="apiKeyBtn" onclick="setApiKey()">Connect</button>
+                </div>
+                <p id="apiKeyError" class="api-key-error hidden"></p>
+            </div>
+        </section>
+
+        <section id="appContent" class="app-content hidden">
+        <section class="search-section">
+            <div class="search-bar">
+                <input type="text" id="symbolInput" placeholder="Enter symbol or company name (e.g., AAPL, Tesla)" autocomplete="off">
+                <button id="searchBtn" onclick="searchStock()">Search</button>
+            </div>
+            <p class="search-hint">Press Enter to search &middot; Supports symbol or company name</p>
+        </section>
+
+        <section id="homeFeed" class="home-feed">
+            <div class="feed-header">
+                <h2 class="feed-title">Market Overview</h2>
+                <div class="feed-filters" id="feedFilters">
+                    <button class="filter-btn active" data-filter="top_gainers">Top Gainers</button>
+                    <button class="filter-btn" data-filter="top_losers">Top Losers</button>
+                    <button class="filter-btn" data-filter="most_actively_traded">Most Active</button>
+                </div>
+            </div>
+            <div id="feedLoading" class="feed-loading hidden">
+                <div class="spinner"></div>
+                <p>Loading market data...</p>
+            </div>
+            <div id="feedError" class="error hidden"></div>
+            <div id="feedGrid" class="feed-grid"></div>
+        </section>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Fetching stock data...</p>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+
+        <section id="searchResults" class="search-results hidden">
+            <h3 class="search-results-title">Matching Stocks</h3>
+            <p class="search-results-hint">Click a result to view its details</p>
+            <div id="resultsList" class="results-list"></div>
+        </section>
+
+        <section id="stockDisplay" class="stock-display hidden">
+            <button id="backBtn" class="back-btn" onclick="showHomeFeed()">&larr; Back to Market</button>
+            <div class="stock-header">
+                <h2 id="stockSymbol">--</h2>
+                <span id="lastUpdated" class="last-updated"></span>
+            </div>
+
+            <div class="stock-metrics">
+                <div class="metric-box">
+                    <span class="metric-label">Latest Price</span>
+                    <span id="stockPrice" class="metric-value price">--</span>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">Change</span>
+                    <span id="stockChange" class="metric-value">--</span>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">Change %</span>
+                    <span id="stockChangePercent" class="metric-value">--</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="watchlist" class="watchlist hidden">
+            <h3 class="watchlist-title">Watchlist</h3>
+            <div id="watchlistItems" class="watchlist-items"></div>
+        </section>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
